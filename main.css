@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cambria', serif;
+  background: linear-gradient(to bottom, #ffe0e9, #fffbe7);
+  overflow-x: hidden;
+}
+
+.container {
+  text-align: center;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #ff4d6d;
+  margin-bottom: 0.5rem;
+}
+
+.greeting {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* ...existing code... */
+.photo-section {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+  width: 100%;
+  animation: slide-photos 10s linear infinite;
+}
+
+@keyframes slide-photos {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* ...existing code... */
+
+.photo-card {
+  width: 250px;
+  background: white;
+  border: 3px dashed #ffd166;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.photo-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.footer-message {
+  margin-top: 40px;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.animation img {
+  position: fixed;
+  z-index: 0;
+}
+
+.balloons {
+  top: 0;
+  right: 10px;
+  width: 120px;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ...existing code... */
+.balloon-float {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.balloon {
+  position: absolute;
+  width: 60px;
+  opacity: 0.8;
+  animation: balloon-up 7s linear infinite;
+}
+
+.balloon1 { left: 10vw; animation-delay: 0s; }
+.balloon2 { left: 50vw; animation-delay: 2s; }
+.balloon3 { left: 80vw; animation-delay: 4s; }
+
+@keyframes balloon-up {
+  0% {
+    bottom: -100px;
+    opacity: 0.8;
+    transform: translateX(0) scale(1);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(30px) scale(1.05);
+  }
+  100% {
+    bottom: 110vh;
+    opacity: 0;
+    transform: translateX(-20px) scale(0.95);
+  }
+}
+/* ...existing code... */
+.lights {
+  top: 0;
+  left: 10px;
+  width: 120px;
+  animation: blink 2s infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
